@@ -17,10 +17,11 @@ Interface
 
 Neighbor
   ^\s*Remote Chassis ID:\s+${REMOTE_CHASSIS_ID}
-  ^\s*Remote Port ID:\s+${REMOTE_PORT} -> Record Interface
-# The below are not supported on older Dell Switch OS'
-#  ^\s*Remote Port Description:\s+${REMOTE_PORT_DESCRIPTION}
-#  ^\s*Remote System Name:\s+${REMOTE_SYSTEM_NAME}
-#  ^\s*Remote System Desc: ${REMOTE_SYSTEM_DESCRIPTION}
-#  ^\s*Existing System Capabilities:\s+${REMOTE_SYSTEM_CAPAB}
-#  ^\s*Enabled System Capabilities:\s+${REMOTE_SYSTEM_ENABLE_CAPAB} -> Record Interface
+  ^\s*Remote Port ID:\s+${REMOTE_PORT}
+# The below are contextual and not always present.
+  ^\s*Remote Port Description:\s+${REMOTE_PORT_DESCRIPTION} -> Continue
+  ^\s*Remote System Name:\s+${REMOTE_SYSTEM_NAME} -> Continue
+  ^\s*Remote System Desc: ${REMOTE_SYSTEM_DESCRIPTION} -> Continue
+  ^\s*Existing System Capabilities:\s+${REMOTE_SYSTEM_CAPAB} -> Continue
+  ^\s*Enabled System Capabilities:\s+${REMOTE_SYSTEM_ENABLE_CAPAB} -> Continue
+  ^\s*-----------------------+ -> Record Interface
